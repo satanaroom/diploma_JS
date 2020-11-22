@@ -1,38 +1,29 @@
 {
-  "name": "3dGlo",
+  "name": "Diploma",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --open --mode=development",
-    "build": "webpack --mode=production"
+    "build": "webpack",
+    "dev": "webpack serve"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/satanaroom/learnJS.git"
+    "url": "git+https://github.com/satanaroom/diploma_JS.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/satanaroom/learnJS/issues"
+    "url": "https://github.com/satanaroom/diploma_JS/issues"
   },
-  "homepage": "https://github.com/satanaroom/learnJS#readme",
+  "homepage": "https://github.com/satanaroom/diploma_JS#readme",
   "devDependencies": {
-    "@babel/core": "^7.12.3",
-    "@babel/preset-env": "^7.12.1",
+    "@babel/core": "^7.12.7",
+    "@babel/preset-env": "^7.12.7",
     "babel-loader": "^8.2.1",
-    "path": "^0.12.7",
-    "webpack": "^4.38.0",
-    "webpack-cli": "^3.3.6",
-    "webpack-dev-server": "^3.7.2"
-  },
-  "dependencies": {
-    "@babel/polyfill": "^7.12.1",
-    "element-closest": "^3.0.2",
-    "es6-promise": "^4.2.8",
-    "fetch-polyfill": "^0.8.2",
-    "formdata-polyfill": "^3.0.20",
-    "nodelist-foreach-polyfill": "^1.2.0"
+    "webpack": "^5.6.0",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0"
   }
 }
