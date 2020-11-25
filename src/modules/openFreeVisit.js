@@ -9,14 +9,14 @@ const openFreeVisit = () => {
         if (target.classList.contains('open-popup')) {
             freeVisitForm.style.display = 'block';
             formContentVisit.style.opacity = "0";
-                let x = 0;
-                const timer = setInterval(() => {
-                    x += 0.1;
-                    formContentVisit.style.opacity = `${x}`;
-                    if (formContentVisit.style.opacity === "1.1") {
-                        clearInterval(timer);
-                    }
-                }, 20);
+            let x = 0;
+            const timer = setInterval(() => {
+                x += 0.1;
+                formContentVisit.style.opacity = `${x}`;
+                if (formContentVisit.style.opacity === "1.1") {
+                    clearInterval(timer);
+                }
+            }, 20);
         } else if (target.classList.contains('close_icon') || 
         target.classList.contains('overlay')) {
             document.querySelectorAll('#callback_form2-phone').forEach((elem)=> {
