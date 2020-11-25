@@ -19,7 +19,21 @@
 /*! runtime requirements: __webpack_require__, __webpack_require__.r, __webpack_exports__, __webpack_require__.* */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_dropDowmMenu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/dropDowmMenu */ \"./src/modules/dropDowmMenu.js\");\n/* harmony import */ var _modules_openFreeVisit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/openFreeVisit */ \"./src/modules/openFreeVisit.js\");\n\n\n\n //dropDownMenu\n\n(0,_modules_dropDowmMenu__WEBPACK_IMPORTED_MODULE_0__.default)(); //freeVisit\n\n(0,_modules_openFreeVisit__WEBPACK_IMPORTED_MODULE_1__.default)();\n\n//# sourceURL=webpack://Diploma/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_dropDowmMenu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/dropDowmMenu */ \"./src/modules/dropDowmMenu.js\");\n/* harmony import */ var _modules_openFreeVisit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/openFreeVisit */ \"./src/modules/openFreeVisit.js\");\n/* harmony import */ var _modules_callBackMe__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/callBackMe */ \"./src/modules/callBackMe.js\");\n\n\n\n\n //dropDownMenu\n\n(0,_modules_dropDowmMenu__WEBPACK_IMPORTED_MODULE_0__.default)(); //freeVisit\n\n(0,_modules_openFreeVisit__WEBPACK_IMPORTED_MODULE_1__.default)(); //callBack\n\n(0,_modules_callBackMe__WEBPACK_IMPORTED_MODULE_2__.default)();\n\n//# sourceURL=webpack://Diploma/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/callBackMe.js":
+/*!***********************************!*\
+  !*** ./src/modules/callBackMe.js ***!
+  \***********************************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": function() { return __WEBPACK_DEFAULT_EXPORT__; }\n/* harmony export */ });\n\n\nvar callBackMe = function callBackMe() {\n  var popup = document.querySelector('.popup');\n  document.addEventListener('click', function (event) {\n    var target = event.target;\n\n    if (target.matches('#callback_form')) {\n      popup.style.display = 'block';\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (callBackMe);\n\n//# sourceURL=webpack://Diploma/./src/modules/callBackMe.js?");
 
 /***/ }),
 
@@ -33,7 +47,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
 /*! runtime requirements: __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": function() { return __WEBPACK_DEFAULT_EXPORT__; }\n/* harmony export */ });\n\n\nvar dropDownMenu = function dropDownMenu() {\n  var clubSelect = document.querySelector('.club-select'),\n      clubsMenu = document.getElementById('clubs-menu');\n  clubSelect.addEventListener('click', function (event) {\n    var target = event.target;\n\n    if (target.classList.contains('hidden-menu')) {\n      clubsMenu.style.display = \"block\";\n      clubsMenu.classList.remove('hidden-menu');\n      clubsMenu.classList.add('blocked-menu');\n    } else if (target.matches('blocked-menu')) {\n      clubsMenu.classList.remove('blocked-menu');\n      clubsMenu.classList.add('hidden-menu');\n      clubsMenu.style.display = \"none\";\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (dropDownMenu);\n\n//# sourceURL=webpack://Diploma/./src/modules/dropDowmMenu.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": function() { return __WEBPACK_DEFAULT_EXPORT__; }\n/* harmony export */ });\n\n\nvar dropDownMenu = function dropDownMenu() {\n  var clubSelect = document.querySelector('.club-select'),\n      clubsMenu = document.getElementById('clubs-menu');\n  clubSelect.addEventListener('click', function (event) {\n    var target = event.target;\n\n    if (target.classList.contains('hidden-menu')) {\n      clubsMenu.style.display = \"block\";\n      target.classList.remove('hidden-menu');\n      target.classList.add('blocked-menu');\n    } else if (target.classList.contains('blocked-menu')) {\n      target.classList.remove('blocked-menu');\n      target.classList.add('hidden-menu');\n      clubsMenu.style.display = \"none\";\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (dropDownMenu);\n\n//# sourceURL=webpack://Diploma/./src/modules/dropDowmMenu.js?");
 
 /***/ }),
 
@@ -117,7 +131,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	!function() {
-/******/ 		__webpack_require__.h = function() { return "fea6f9e96f3d3485f5e8"; }
+/******/ 		__webpack_require__.h = function() { return "5e3dbe76b5ef56a8491f"; }
 /******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
