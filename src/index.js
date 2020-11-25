@@ -1,6 +1,9 @@
 'use strict';
 
 import dropDowmMenu from './modules/dropDowmMenu';
+import openFreeVisit from './modules/openFreeVisit';
 
-//Culc
+//dropDownMenu
 dropDowmMenu();
+//freeVisit
+openFreeVisit();
