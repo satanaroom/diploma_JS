@@ -19,7 +19,7 @@
 /*! runtime requirements: __webpack_require__, __webpack_require__.r, __webpack_exports__, __webpack_require__.* */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_dropDowmMenu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/dropDowmMenu */ \"./src/modules/dropDowmMenu.js\");\n/* harmony import */ var _modules_openFreeVisit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/openFreeVisit */ \"./src/modules/openFreeVisit.js\");\n/* harmony import */ var _modules_callBackMe__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/callBackMe */ \"./src/modules/callBackMe.js\");\n\n\n\n\n //dropDownMenu\n\n(0,_modules_dropDowmMenu__WEBPACK_IMPORTED_MODULE_0__.default)(); //freeVisit\n\n(0,_modules_openFreeVisit__WEBPACK_IMPORTED_MODULE_1__.default)(); //callBack\n\n(0,_modules_callBackMe__WEBPACK_IMPORTED_MODULE_2__.default)();\n\n//# sourceURL=webpack://Diploma/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_dropDowmMenu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/dropDowmMenu */ \"./src/modules/dropDowmMenu.js\");\n/* harmony import */ var _modules_openFreeVisit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/openFreeVisit */ \"./src/modules/openFreeVisit.js\");\n/* harmony import */ var _modules_callBackMe__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/callBackMe */ \"./src/modules/callBackMe.js\");\n/* harmony import */ var _modules_getGift__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/getGift */ \"./src/modules/getGift.js\");\n\n\n\n\n\n //dropDownMenu\n\n(0,_modules_dropDowmMenu__WEBPACK_IMPORTED_MODULE_0__.default)(); //freeVisit\n\n(0,_modules_openFreeVisit__WEBPACK_IMPORTED_MODULE_1__.default)(); //callBack\n\n(0,_modules_callBackMe__WEBPACK_IMPORTED_MODULE_2__.default)(); //gift\n\n(0,_modules_getGift__WEBPACK_IMPORTED_MODULE_3__.default)();\n\n//# sourceURL=webpack://Diploma/./src/index.js?");
 
 /***/ }),
 
@@ -33,7 +33,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
 /*! runtime requirements: __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": function() { return __WEBPACK_DEFAULT_EXPORT__; }\n/* harmony export */ });\n\n\nvar callBackMe = function callBackMe() {\n  var popup = document.querySelector('.popup');\n  document.addEventListener('click', function (event) {\n    var target = event.target;\n\n    if (target.matches('#callback_form')) {\n      popup.style.display = 'block';\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (callBackMe);\n\n//# sourceURL=webpack://Diploma/./src/modules/callBackMe.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": function() { return __WEBPACK_DEFAULT_EXPORT__; }\n/* harmony export */ });\n\n\nvar callBackMe = function callBackMe() {\n  var popup = document.querySelector('.popup'),\n      formContent = document.querySelector('.form-content');\n  document.addEventListener('click', function (event) {\n    var target = event.target;\n\n    if (target.classList.contains('callback-btn')) {\n      popup.style.display = 'block';\n      formContent.style.opacity = \"0\";\n      var x = 0;\n      var timer = setInterval(function () {\n        x += 0.1;\n        formContent.style.opacity = \"\".concat(x);\n\n        if (formContent.style.opacity === \"1.1\") {\n          clearInterval(timer);\n        }\n      }, 20);\n    } else if (target.classList.contains('close_icon') || target.classList.contains('overlay')) {\n      document.querySelectorAll('#callback_form1-phone').forEach(function (elem) {\n        elem.value = '';\n      });\n      document.querySelectorAll('#callback_form1-name').forEach(function (elem) {\n        elem.value = '';\n      });\n      var _x = 1;\n\n      var _timer = setInterval(function () {\n        _x -= 0.1;\n        formContent.style.opacity = \"\".concat(_x);\n\n        if (formContent.style.opacity === \"-0.1\") {\n          clearInterval(_timer);\n          popup.style.display = \"none\";\n        }\n      }, 1);\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (callBackMe);\n\n//# sourceURL=webpack://Diploma/./src/modules/callBackMe.js?");
 
 /***/ }),
 
@@ -48,6 +48,20 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": function() { return __WEBPACK_DEFAULT_EXPORT__; }\n/* harmony export */ });\n\n\nvar dropDownMenu = function dropDownMenu() {\n  var clubSelect = document.querySelector('.club-select'),\n      clubsMenu = document.getElementById('clubs-menu');\n  clubSelect.addEventListener('click', function (event) {\n    var target = event.target;\n\n    if (target.classList.contains('hidden-menu')) {\n      clubsMenu.style.display = \"block\";\n      target.classList.remove('hidden-menu');\n      target.classList.add('blocked-menu');\n    } else if (target.classList.contains('blocked-menu')) {\n      target.classList.remove('blocked-menu');\n      target.classList.add('hidden-menu');\n      clubsMenu.style.display = \"none\";\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (dropDownMenu);\n\n//# sourceURL=webpack://Diploma/./src/modules/dropDowmMenu.js?");
+
+/***/ }),
+
+/***/ "./src/modules/getGift.js":
+/*!********************************!*\
+  !*** ./src/modules/getGift.js ***!
+  \********************************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": function() { return __WEBPACK_DEFAULT_EXPORT__; }\n/* harmony export */ });\n\n\nvar getGift = function getGift() {\n  var popup = document.querySelector('.popup'),\n      formContent = document.querySelector('.form-content');\n  document.addEventListener('click', function (event) {\n    var target = event.target;\n\n    if (target.classList.contains('fixed-gift')) {\n      popup.style.display = 'block';\n      formContent.style.opacity = \"0\";\n      var x = 0;\n      var timer = setInterval(function () {\n        x += 0.1;\n        formContent.style.opacity = \"\".concat(x);\n\n        if (formContent.style.opacity === \"1.1\") {\n          clearInterval(timer);\n        }\n      }, 20);\n    } else if (target.classList.contains('close_icon') || target.classList.contains('overlay')) {\n      var _x = 1;\n\n      var _timer = setInterval(function () {\n        _x -= 0.1;\n        formContent.style.opacity = \"\".concat(_x);\n\n        if (formContent.style.opacity === \"-0.1\") {\n          clearInterval(_timer);\n          popup.style.display = \"none\";\n        }\n      }, 1);\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getGift);\n\n//# sourceURL=webpack://Diploma/./src/modules/getGift.js?");
 
 /***/ }),
 
@@ -131,7 +145,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	!function() {
-/******/ 		__webpack_require__.h = function() { return "5e3dbe76b5ef56a8491f"; }
+/******/ 		__webpack_require__.h = function() { return "e551d8da638d52845fc0"; }
 /******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
