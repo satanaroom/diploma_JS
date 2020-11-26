@@ -5,6 +5,8 @@ import openFreeVisit from './modules/openFreeVisit';
 import callBackMe from './modules/callBackMe';
 import getGift from './modules/getGift';
 import sendForm from './modules/sendForm';
+import enterPromo from './modules/promo';
+import burger from './modules/burger';
 
 //dropDownMenu
 dropDowmMenu();
@@ -16,4 +18,8 @@ callBackMe();
 getGift();
 //sendForm
 sendForm();
+//promo
+enterPromo();
+//burger
+burger();
 

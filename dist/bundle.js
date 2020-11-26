@@ -19,7 +19,21 @@
 /*! runtime requirements: __webpack_require__, __webpack_require__.r, __webpack_exports__, __webpack_require__.* */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_dropDowmMenu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/dropDowmMenu */ \"./src/modules/dropDowmMenu.js\");\n/* harmony import */ var _modules_openFreeVisit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/openFreeVisit */ \"./src/modules/openFreeVisit.js\");\n/* harmony import */ var _modules_callBackMe__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/callBackMe */ \"./src/modules/callBackMe.js\");\n/* harmony import */ var _modules_getGift__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/getGift */ \"./src/modules/getGift.js\");\n/* harmony import */ var _modules_sendForm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/sendForm */ \"./src/modules/sendForm.js\");\n\n\n\n\n\n\n //dropDownMenu\n\n(0,_modules_dropDowmMenu__WEBPACK_IMPORTED_MODULE_0__.default)(); //freeVisit\n\n(0,_modules_openFreeVisit__WEBPACK_IMPORTED_MODULE_1__.default)(); //callBack\n\n(0,_modules_callBackMe__WEBPACK_IMPORTED_MODULE_2__.default)(); //gift\n\n(0,_modules_getGift__WEBPACK_IMPORTED_MODULE_3__.default)(); //sendForm\n\n(0,_modules_sendForm__WEBPACK_IMPORTED_MODULE_4__.default)();\n\n//# sourceURL=webpack://Diploma/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_dropDowmMenu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/dropDowmMenu */ \"./src/modules/dropDowmMenu.js\");\n/* harmony import */ var _modules_openFreeVisit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/openFreeVisit */ \"./src/modules/openFreeVisit.js\");\n/* harmony import */ var _modules_callBackMe__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/callBackMe */ \"./src/modules/callBackMe.js\");\n/* harmony import */ var _modules_getGift__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/getGift */ \"./src/modules/getGift.js\");\n/* harmony import */ var _modules_sendForm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/sendForm */ \"./src/modules/sendForm.js\");\n/* harmony import */ var _modules_promo__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/promo */ \"./src/modules/promo.js\");\n/* harmony import */ var _modules_burger__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/burger */ \"./src/modules/burger.js\");\n\n\n\n\n\n\n\n\n //dropDownMenu\n\n(0,_modules_dropDowmMenu__WEBPACK_IMPORTED_MODULE_0__.default)(); //freeVisit\n\n(0,_modules_openFreeVisit__WEBPACK_IMPORTED_MODULE_1__.default)(); //callBack\n\n(0,_modules_callBackMe__WEBPACK_IMPORTED_MODULE_2__.default)(); //gift\n\n(0,_modules_getGift__WEBPACK_IMPORTED_MODULE_3__.default)(); //sendForm\n\n(0,_modules_sendForm__WEBPACK_IMPORTED_MODULE_4__.default)(); //promo\n\n(0,_modules_promo__WEBPACK_IMPORTED_MODULE_5__.default)(); //burger\n\n(0,_modules_burger__WEBPACK_IMPORTED_MODULE_6__.default)();\n\n//# sourceURL=webpack://Diploma/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/burger.js":
+/*!*******************************!*\
+  !*** ./src/modules/burger.js ***!
+  \*******************************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": function() { return __WEBPACK_DEFAULT_EXPORT__; }\n/* harmony export */ });\n/* eslint-disable strict */\n\n\nvar burger = function burger() {\n  //style\n  var style = document.createElement(\"style\");\n  style.id = \"burger-style\";\n  style.textContent = \"\\n    .top_fixed {\\n    position: fixed !important;\\n    top: 0 !important;\\n    left: 0 !important;\\n    width: 100% !important;\\n    animation: fixedMenu 0.4s forwards !important;\\n    }\\n\\n    @keyframes fixedMenu {\\n        0% {\\n            height: 0 !important;\\n        }\\n\\n        50% {\\n            top: 10px !important;\\n            height: 60px !important;\\n        }\\n\\n        100% {\\n            top: 0px !important;\\n            height: 60px !important;\\n        }\\n    }\\n    \";\n  document.head.append(style);\n  var menu = document.querySelector(\".top-menu\");\n\n  var getCoords = function getCoords(elem) {\n    var box = elem.getBoundingClientRect(),\n        body = document.body,\n        docEl = document.documentElement,\n        scrollTop = window.pageYOffset || docEl.scrollTop || body.scrollTop,\n        clientTop = docEl.clientTop || body.clientTop || 0,\n        top = box.top + scrollTop - clientTop;\n    return top;\n  };\n\n  var menuStartCoords = getCoords(menu);\n\n  var fixMenu = function fixMenu() {\n    var Y = window.scrollY;\n\n    if (Y >= menuStartCoords) {\n      console.log(Y);\n      menu.classList.add(\"top_fixed\");\n    } else if (Y <= menuStartCoords) {\n      menu.classList.remove(\"top_fixed\");\n    }\n  };\n\n  if (window.innerWidth < 768) {\n    window.addEventListener(\"scroll\", fixMenu);\n  }\n\n  window.addEventListener(\"resize\", function () {\n    if (window.innerWidth < 768) {\n      window.addEventListener(\"scroll\", fixMenu);\n    }\n\n    if (window.innerWidth > 768) {\n      window.removeEventListener(\"scroll\", fixMenu);\n    }\n  }); //popupMenu\n\n  var button = document.querySelector(\".hidden-large > img\"),\n      popupMenu = document.querySelector(\".popup-menu\");\n  console.log(button);\n  document.addEventListener(\"click\", function (event) {\n    var target = event.target;\n\n    if (target.closest(\".hidden-large > img\")) {\n      popupMenu.style.display = \"flex\";\n    }\n\n    if (target.closest(\".close-menu-btn > img \")) {\n      popupMenu.style.display = \"none\";\n    }\n\n    if (target.closest(\".scroll > a\")) {\n      popupMenu.style.display = \"none\";\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (burger);\n\n//# sourceURL=webpack://Diploma/./src/modules/burger.js?");
 
 /***/ }),
 
@@ -76,6 +90,20 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": function() { return __WEBPACK_DEFAULT_EXPORT__; }\n/* harmony export */ });\n\n\nvar openFreeVisit = function openFreeVisit() {\n  var freeVisitForm = document.getElementById('free_visit_form'),\n      formContentVisit = document.querySelector('.form-content-visit');\n  document.addEventListener('click', function (event) {\n    var target = event.target;\n\n    if (target.classList.contains('open-popup')) {\n      freeVisitForm.style.display = 'block';\n      formContentVisit.style.opacity = \"0\";\n      var x = 0;\n      var timer = setInterval(function () {\n        x += 0.1;\n        formContentVisit.style.opacity = \"\".concat(x);\n\n        if (formContentVisit.style.opacity === \"1.1\") {\n          clearInterval(timer);\n        }\n      }, 20);\n    } else if (target.classList.contains('close_icon') || target.classList.contains('overlay')) {\n      document.querySelectorAll('#callback_form2-phone').forEach(function (elem) {\n        elem.value = '';\n      });\n      document.querySelectorAll('#callback_form2-name').forEach(function (elem) {\n        elem.value = '';\n      });\n      var _x = 1;\n\n      var _timer = setInterval(function () {\n        _x -= 0.1;\n        formContentVisit.style.opacity = \"\".concat(_x);\n\n        if (formContentVisit.style.opacity === \"-0.1\") {\n          clearInterval(_timer);\n          freeVisitForm.style.display = \"none\";\n        }\n      }, 1);\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (openFreeVisit);\n\n//# sourceURL=webpack://Diploma/./src/modules/openFreeVisit.js?");
+
+/***/ }),
+
+/***/ "./src/modules/promo.js":
+/*!******************************!*\
+  !*** ./src/modules/promo.js ***!
+  \******************************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": function() { return __WEBPACK_DEFAULT_EXPORT__; }\n/* harmony export */ });\n\n\nvar enterPromo = function enterPromo() {};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (enterPromo);\n\n//# sourceURL=webpack://Diploma/./src/modules/promo.js?");
 
 /***/ }),
 
@@ -159,7 +187,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	!function() {
-/******/ 		__webpack_require__.h = function() { return "af80c72d76d0f036b4ba"; }
+/******/ 		__webpack_require__.h = function() { return "bb32ada248db77a57af8"; }
 /******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
