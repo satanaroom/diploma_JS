@@ -4,6 +4,7 @@ import dropDowmMenu from './modules/dropDowmMenu';
 import openFreeVisit from './modules/openFreeVisit';
 import callBackMe from './modules/callBackMe';
 import getGift from './modules/getGift';
+import sendForm from './modules/sendForm';
 
 //dropDownMenu
 dropDowmMenu();
@@ -13,3 +14,6 @@ openFreeVisit();
 callBackMe();
 //gift
 getGift();
+//sendForm
+sendForm();
+
