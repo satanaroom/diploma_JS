@@ -1,13 +1,21 @@
 'use strict';
 
+import maskPhone from './modules/maskPhone';
 import dropDowmMenu from './modules/dropDowmMenu';
 import openFreeVisit from './modules/openFreeVisit';
 import callBackMe from './modules/callBackMe';
 import getGift from './modules/getGift';
 import sendForm from './modules/sendForm';
-import enterPromo from './modules/promo';
+import getPromocode from './modules/promo';
 import burger from './modules/burger';
+import scrollTop from './modules/scrollToTop';
 
+//maskPhone
+maskPhone("#callback_form2-phone", "+_(___) ___-__-__");
+maskPhone("#callback_form1-phone", "+_(___) ___-__-__");
+maskPhone("#callback_form-phone", "+_(___) ___-__-__");
+maskPhone("#phone", "+_(___) ___-__-__");
+maskPhone("#callback_footer_form-phone", "+_(___) ___-__-__");
 //dropDownMenu
 dropDowmMenu();
 //freeVisit
@@ -19,7 +27,9 @@ getGift();
 //sendForm
 sendForm();
 //promo
-enterPromo();
+getPromocode();
 //burger
 burger();
+//scrollToTop
+scrollTop();
 

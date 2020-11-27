@@ -34,7 +34,7 @@ const callBackMe = () => {
                     callBackForm.style.display = "none";
                 }
             }, 1);
-        }
+        } 
     });
 };
 
