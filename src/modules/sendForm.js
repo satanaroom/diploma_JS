@@ -2,9 +2,7 @@
 const sendForm = () => {
     document.addEventListener('input', event => {
         const target = event.target;
-        if (target.matches('#callback_form2-name') || 
-        target.matches('#callback_form1-name') ||
-        target.matches('#name')) {
+        if (target.matches('.nameClass')) {
             target.value = target.value.replace(/[^А-Яа-яЁе ]/gi, '');
         }
     });
@@ -113,23 +111,19 @@ const sendForm = () => {
                 console.log(error);
             })
             .then(() => {
-                document.getElementById('callback_form1-phone').value = '';
-                document.getElementById('callback_form-phone').value = '';
-                document.getElementById('callback_form1-name').value = '';
-                document.getElementById('callback_form2-phone').value = '';
-                document.getElementById('callback_form2-name').value = '';
+                document.querySelectorAll('.phonecall').forEach((elem) => {
+                    elem.value = '';
+                });
+                document.querySelectorAll('.nameClass').forEach((elem) => {
+                    elem.value = '';
+                });
                 document.getElementById('promo').value = '';
-                document.getElementById('phone').value = '';
-                document.getElementById('callback_footer_form-phone').value = '';
                 document.getElementById('check').checked = false;
                 document.getElementById('check2').checked = false;
                 document.getElementById('check1').checked = false;
                 document.getElementById('card_check').checked = false;
                 document.getElementById('footer_leto_mozaika').checked = false;
                 document.getElementById('footer_leto_schelkovo').checked = false;
-                document.querySelectorAll('#name').forEach((elem)=> {
-                    elem.value = '';
-                });
             });
     });
 

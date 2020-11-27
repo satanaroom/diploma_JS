@@ -7,15 +7,15 @@ import callBackMe from './modules/callBackMe';
 import getGift from './modules/getGift';
 import sendForm from './modules/sendForm';
 import getPromocode from './modules/promo';
-import burger from './modules/burger';
+import showBurger from './modules/showBurger';
 import scrollTop from './modules/scrollToTop';
+import carousel from './modules/carousel';
+import photoGallery from './modules/photoGallery';
+import fixedMenu from './modules/fixedMenu';
+import topSlider from './modules/topSlider';
 
 //maskPhone
-maskPhone("#callback_form2-phone", "+_(___) ___-__-__");
-maskPhone("#callback_form1-phone", "+_(___) ___-__-__");
-maskPhone("#callback_form-phone", "+_(___) ___-__-__");
-maskPhone("#phone", "+_(___) ___-__-__");
-maskPhone("#callback_footer_form-phone", "+_(___) ___-__-__");
+maskPhone(".phonecall", "+_(___) ___-__-__");
 //dropDownMenu
 dropDowmMenu();
 //freeVisit
@@ -28,8 +28,16 @@ getGift();
 sendForm();
 //promo
 getPromocode();
-//burger
-burger();
+//showBurger
+showBurger();
 //scrollToTop
 scrollTop();
+//carousel
+carousel();
+//photoGallery
+photoGallery();
+//fixedMenu
+fixedMenu();
+//topSlider
+topSlider();
 
