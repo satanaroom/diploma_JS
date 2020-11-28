@@ -6,7 +6,7 @@ import openFreeVisit from './modules/openFreeVisit';
 import callBackMe from './modules/callBackMe';
 import getGift from './modules/getGift';
 import sendForm from './modules/sendForm';
-import getPromocode from './modules/promo';
+import getPromocode from './modules/getPromocode';
 import showBurger from './modules/showBurger';
 import scrollTop from './modules/scrollToTop';
 import carousel from './modules/carousel';
