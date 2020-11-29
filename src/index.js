@@ -2,9 +2,7 @@
 
 import maskPhone from './modules/maskPhone';
 import dropDowmMenu from './modules/dropDowmMenu';
-import openFreeVisit from './modules/openFreeVisit';
-import callBackMe from './modules/callBackMe';
-import getGift from './modules/getGift';
+import modalWindows from './modules/modalWindows';
 import sendForm from './modules/sendForm';
 import getPromocode from './modules/getPromocode';
 import showBurger from './modules/showBurger';
@@ -18,12 +16,8 @@ import topSlider from './modules/topSlider';
 maskPhone(".phonecall", "+_(___) ___-__-__");
 //dropDownMenu
 dropDowmMenu();
-//freeVisit
-openFreeVisit();
 //callBack
-callBackMe();
-//gift
-getGift();
+modalWindows();
 //sendForm
 sendForm();
 //promo

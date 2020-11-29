@@ -49,6 +49,7 @@ const sendForm = () => {
         }
 
         shell.appendChild(statusMessage);
+
         if (target !== footerForm) {
             if (checkOut.checked === false) {
                 statusMessage.textContent = submitMessage;
@@ -66,7 +67,6 @@ const sendForm = () => {
             }
         }
         
-
         document.addEventListener('click', (event) => {
             const target = event.target;
             if (target.classList.contains('close_icon') || 
@@ -104,17 +104,17 @@ const sendForm = () => {
             .then((response) => {
                 if (response.status !== 200) {                    
                     throw new Error('status network not 200');
-                } 
+                }
                 thanks.style.display = 'block';
-                // formContentThanks.style.opacity = "0";
-                // let x = 0;
-                // const timer = setInterval(() => {
-                //     x += 0.1;
-                //     formContentThanks.style.opacity = `${x}`;
-                //     if (formContentThanks.style.opacity === "1.1") {
-                //         clearInterval(timer);
-                //         }
-                // }, 20);
+                formContentThanks.style.opacity = "0";
+                let x = 0;
+                const timer = setInterval(() => {
+                    x += 0.1;
+                    formContentThanks.style.opacity = `${x}`;
+                    if (formContentThanks.style.opacity === "1.1") {
+                        clearInterval(timer);
+                        }
+                }, 20);
                 thanks.innerHTML = `
                 <div class="overlay">
                 </div>
@@ -129,8 +129,17 @@ const sendForm = () => {
                     </div>
                 </div>`;
             })
-            .catch(error => {                
-                thanks.style.display = 'block';
+            .catch((error) => {       
+                thanks.style.display = 'block';  
+                formContentThanks.style.opacity = "0";
+                let x = 0;
+                const timer = setInterval(() => {
+                    x += 0.1;
+                    formContentThanks.style.opacity = `${x}`;
+                    if (formContentThanks.style.opacity === "1.1") {
+                        clearInterval(timer);
+                        }
+                }, 20);       
                 thanks.innerHTML = `
                 <div class="overlay">
                 </div>
@@ -144,25 +153,25 @@ const sendForm = () => {
                         <button class="btn close-btn">OK</button>
                     </div>
                 /div>`;
-                // formContentThanks.style.opacity = "0";
-                // let x = 0;
-                // const timer = setInterval(() => {
-                //     x += 0.1;
-                //     formContentThanks.style.opacity = `${x}`;
-                //     if (formContentThanks.style.opacity === "1.1") {
-                //         clearInterval(timer);
-                //         }
-                // }, 20);
-                console.log(error);
+                console.error(error);
             })
             .then(() => {
-                document.querySelectorAll('.phonecall').forEach((elem) => {
-                    elem.value = '';
-                });
-                document.querySelectorAll('.nameClass').forEach((elem) => {
-                    elem.value = '';
-                });
-                document.getElementById('promo').value = '';
+                if (document.querySelectorAll('.phonecall')) {
+                    document.querySelectorAll('.phonecall').forEach((elem) => {
+                        elem.value = '';
+                    });
+                }
+                
+                if (document.querySelectorAll('.nameClass')) {
+                    document.querySelectorAll('.nameClass').forEach((elem) => {
+                        elem.value = '';
+                    });
+                }
+                
+                if (document.getElementById('promo')) {
+                    document.getElementById('promo').value = '';
+                }
+                
                 if (target !== footerForm) {
                     if (checkOut.checked) {
                         checkOut.checked = false;
