@@ -159,7 +159,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /*! runtime requirements: __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": function() { return __WEBPACK_DEFAULT_EXPORT__; }\n/* harmony export */ });\n\n\nvar showBurger = function showBurger() {\n  var burger = document.querySelector('.hidden-large'),\n      hiddenSmall = document.querySelector('.hidden-small');\n  window.addEventListener('resize', function () {\n    var x = window.innerWidth;\n\n    if (x <= 768) {\n      burger.style.display = 'block';\n      hiddenSmall.style.display = 'none';\n    }\n\n    if (x > 768) {\n      burger.style.display = 'none';\n      hiddenSmall.style.display = '';\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (showBurger);\n\n//# sourceURL=webpack://Diploma/./src/modules/showBurger.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": function() { return __WEBPACK_DEFAULT_EXPORT__; }\n/* harmony export */ });\n\n\nvar burger = function burger() {\n  var popupMenu = document.querySelector(\".popup-menu\"),\n      burger = document.querySelector('.hidden-large'),\n      hiddenSmall = document.querySelector('.hidden-small');\n  window.addEventListener('resize', function () {\n    var x = window.innerWidth;\n\n    if (x <= 768) {\n      burger.style.display = 'block';\n      hiddenSmall.style.display = 'none';\n    }\n\n    if (x > 768) {\n      burger.style.display = 'none';\n      hiddenSmall.style.display = '';\n    }\n  });\n  document.addEventListener(\"click\", function (event) {\n    var target = event.target;\n\n    if (target.closest(\".hidden-large > img\")) {\n      popupMenu.style.display = \"flex\";\n    }\n\n    if (target.closest(\".close-menu-btn > img \")) {\n      popupMenu.style.display = \"none\";\n    }\n\n    if (target.closest(\".scroll > a\")) {\n      popupMenu.style.display = \"none\";\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (burger);\n\n//# sourceURL=webpack://Diploma/./src/modules/showBurger.js?");
 
 /***/ }),
 
@@ -243,7 +243,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	!function() {
-/******/ 		__webpack_require__.h = function() { return "07514aff41bb9b9168bd"; }
+/******/ 		__webpack_require__.h = function() { return "6bd2c00e1a2aa2921ccf"; }
 /******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
